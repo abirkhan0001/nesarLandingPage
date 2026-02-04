@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 "use client";
 
 import Image from "next/image";
@@ -23,28 +30,64 @@ const features = [
 
 const AiNativeSection = () => {
   return (
-    <section className="relative w-full py-24 bg-[#F6F5F3] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative w-full bg-[#F6F5F3] overflow-hidden">
+      
+      {/* Flex wrapper for the three divs */}
+      <div className="flex flex-col md:flex-row justify-center items-start px-6 mb-20">
+        
+        <div
+          className="relative z-10 w-full md:w-1/3 rounded-3xl px-10 mt-32 pt-[144px] pb-12 text-center"
+          style={{
+            backgroundImage: 'url("/images/Frame_34.svg")',
+            backgroundSize: "110% auto",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+        </div>
 
-        {/* Center heading card */}
-        <div className="relative z-10 mx-auto mb-20 max-w-xl text-center bg-white rounded-3xl px-10 py-12 shadow-lg">
-          <h2 className="text-3xl font-semibold text-[#1A1A1A]">
+        <div
+          className="relative z-10 w-full md:w-1/3 rounded-3xl px-10 pt-[140px] pb-12 text-center "
+          style={{
+            backgroundImage: 'url("/images/Vector.svg")',
+            backgroundSize: "110% auto",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <h2
+            className="w-[323px] h-[40px] mx-auto text-center font-['Inter_Tight'] text-[38px] font-semibold leading-[105%] tracking-[-0.02em] text-[#1A1A1A]"
+          >
             AI-native at its core
           </h2>
-          <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-            AI isn’t an add-on. It’s the core of our architecture, and the engine
-            behind the world’s most advanced data security.
+          <p
+            className="mt-4 w-[406px] h-[46px] mx-auto text-center font-['Inter_Tight'] text-[15px] font-normal leading-[150%] tracking-[-0.02em] text-[#4C4B47]"
+          >
+            AI isn’t an add-on. It’s the core of our architecture, and the engine behind the world’s most advanced data security.
           </p>
         </div>
 
-        {/* Feature cards */}
+        <div
+          className="relative z-10 w-full md:w-1/3 rounded-3xl px-10 pt-[140px] mt-32 pb-12 text-center overflow-hidden"
+          style={{
+            backgroundImage: 'url("/images/Frame_34.svg")',
+            backgroundSize: "110% auto",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+        </div>
+
+      </div>
+
+      {/* Feature cards */}
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
           {features.map((item, index) => (
             <div
               key={index}
               className={`relative bg-white rounded-3xl p-6 shadow-xl transition-transform
-                ${item.rotate ? "md:-rotate-6 md:-translate-y-6" : ""}
-              `}
+                ${item.rotate ? "md:-rotate-6 md:-translate-y-6" : ""}`}
             >
               {/* Image */}
               <div className="relative w-full h-40 mb-6 flex items-center justify-center">
@@ -67,8 +110,8 @@ const AiNativeSection = () => {
             </div>
           ))}
         </div>
-
       </div>
+
     </section>
   );
 };

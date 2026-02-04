@@ -77,7 +77,51 @@ const Hero = () => {
               Create account
             </button>
 
-            <Image src={Btn} alt="Button Image" width={193} height={51} />
+
+
+   <button
+  className="
+    group
+    flex items-center
+    gap-3
+    rounded-full
+    bg-[#EEEEEC]
+    p-1
+    transition-all duration-300 ease-in-out
+    hover:bg-white
+  "
+>
+  {/* White pill */}
+  <span
+    className="
+      rounded-full
+      bg-white
+      px-4 py-3
+      text-sm font-medium text-[#1A1A1A]
+      transition-all duration-300
+      group-hover:bg-transparent
+    "
+  >
+    Download Report
+  </span>
+
+  {/* Arrow */}
+  <span
+    className="
+      mr-3
+      text-sm
+      transition-all duration-300
+      group-hover:opacity-0
+      group-hover:-translate-x-2
+    "
+  >
+    →
+  </span>
+</button>
+
+
+
+            {/* <Image src={Btn} alt="Button Image" width={193} height={51} /> */}
           </div>
         </div>
 
