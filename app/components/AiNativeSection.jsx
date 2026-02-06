@@ -30,7 +30,7 @@ const features = [
 
 const AiNativeSection = () => {
   return (
-    <section className="relative w-full bg-[#F6F5F3] overflow-hidden">
+    <section className="relative w-full bg-[#F6F5F3] overflow-hidden pb-20">
       
       {/* Flex wrapper for the three divs */}
       <div className="flex flex-col md:flex-row justify-center items-start px-6 mb-20">

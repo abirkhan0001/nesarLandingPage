@@ -45,9 +45,23 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <button className="px-4 py-2 sm:py-3 rounded-[30px] bg-[#2D2D39] text-white text-sm whitespace-nowrap">
-            Get a demo
-          </button>
+          <button
+  className="
+    w-[148px] h-[47px]
+    flex flex-row items-center justify-center
+    gap-[2px]
+    rounded-[30px]
+    bg-[#2D2D39]
+    px-[20px] py-[14px]
+    text-white
+    text-[16px]
+    font-normal
+    overflow-hidden
+    shadow-[inset_0px_1.4px_0.8px_0px_#63636A]
+  "
+>
+  Get a demo
+</button>
         </div>
       </div>
 

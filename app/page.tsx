@@ -5,6 +5,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Group7 from './components/Group7';
 import AiNativeSection from './components/AiNativeSection';
+import Elips from './components/Elips';
+//import ElipsCard from './components/ElipsCard';
+
 
 export default function Home() {
   return (
@@ -17,6 +20,8 @@ export default function Home() {
       <Hero />
       <Group7 />
       <AiNativeSection />
+      <Elips />
+      {/* <ElipsCard /> */}
     </main>
   );
 }

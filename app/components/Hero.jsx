@@ -61,21 +61,27 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex items-center gap-3 z-10">
-            <button
-              className="
-                flex items-center justify-center
-                px-4 py-3
-                rounded-[30px]
-                border border-[#E2E1DD]
-                text-[16px] font-medium
-                shadow-[0px_1px_0px_#FFFFFF,2px_0px_3px_#E7E3DA]
-                bg-[#2D2D39] text-white
-                hover:opacity-90
-                transition
-              "
-            >
-              Create account
-            </button>
+<button
+  className="
+    w-[148px] h-[47px]
+    flex flex-row items-center justify-center
+    gap-[2px]
+    rounded-[30px]
+    bg-[#2D2D39]
+    px-[20px] py-[14px]
+    text-white
+    text-[16px]
+    font-normal
+    overflow-hidden
+    shadow-[inset_0px_1.4px_0.8px_0px_#63636A]
+  "
+>
+  Create account
+</button>
+
+
+
+
 
 
 
