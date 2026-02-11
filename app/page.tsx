@@ -6,7 +6,9 @@ import Hero from './components/Hero';
 import Group7 from './components/Group7';
 import AiNativeSection from './components/AiNativeSection';
 import Elips from './components/Elips';
-//import ElipsCard from './components/ElipsCard';
+ import Data from './components/DataProcess';
+ import AiNativ from './components/AiNativ';
+
 
 
 export default function Home() {
@@ -18,10 +20,11 @@ export default function Home() {
       <div className="h-[120px] lg:h-[96px]" />
 
       <Hero />
-      <Group7 />
+     {/* // <Group7 /> */}
       <AiNativeSection />
+      <AiNativ />
       <Elips />
-      {/* <ElipsCard /> */}
+      <Data />
     </main>
   );
 }

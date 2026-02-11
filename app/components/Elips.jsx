@@ -1,3 +1,6 @@
+
+
+
 "use client";
 
 import Image from "next/image";
@@ -66,7 +69,7 @@ const HeroSection = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 ">
           {/* Column 1 - Cloud Card */}
           <div className="relative">
             <div className="relative w-[514px] h-[518px] bg-white rounded-[20px] p-10 overflow-visible shadow-[0px_4px_24px_rgba(0,0,0,0.08)] flex flex-col justify-end">
@@ -122,37 +125,34 @@ const HeroSection = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="flex flex-col justify-start gap-2 items-center lg:items-end ">
-            {/* Card 2 */}
-            <div
-              className="relative w-[578px] h-[278px] bg-[#FFFFFF] rounded-[20px] p-10 shadow-[-0.5px_-0.5px_0px_0px_rgba(0,0,0,0.10),2.5px_2.5px_3px_-2.5px_rgba(0,0,0,0.15)]">
+ {/* Column 2 */}
+<div className="flex flex-col justify-start gap-2 items-center lg:items-end ">
+  {/* Card 2 */}
+  <div className="relative w-[578px] h-[278px] rounded-[20px] overflow-hidden">
+    <Image
+      src={ElipsCard}
+      alt="Background"
+      width={578}
+      height={278}
+      className="w-full h-full object-cover rounded-[20px]"
+    />
+  </div>
 
-                 <Image
-                    src={ElipsCard}
-                    alt="Background"
-                    width={578}
-                    height={278}
-                    className="absolute inset-0 w-full h-full object-contain"
-                  />
-            </div>
-
-            {/* Card 3 */}
-            <div
-              className="relative w-[578px] h-[278px] bg-[#FFFFFF] rounded-[20px] p-10 shadow-[-0.5px_-0.5px_0px_0px_rgba(0,0,0,0.10),2.5px_2.5px_3px_-2.5px_rgba(0,0,0,0.15)]">
-
-                 <Image
-                    src={ElipsCard}
-                    alt="Background"
-                    width={578}
-                    height={278}
-                    className="absolute inset-0 w-full h-full object-contain"
-                  />
-            </div>
-          </div>
-        </div>
+  {/* Card 3 */}
+  <div className="relative w-[578px] h-[278px] rounded-[20px] overflow-hidden">
+    <Image
+      src={ElipsCard}
+      alt="Background"
+      width={578}
+      height={278}
+      className="w-full h-full object-cover rounded-[20px]"
+    />
+  </div>
+</div> </div>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+

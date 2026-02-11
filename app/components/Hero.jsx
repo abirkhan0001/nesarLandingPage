@@ -74,6 +74,8 @@ const Hero = () => {
     font-normal
     overflow-hidden
     shadow-[inset_0px_1.4px_0.8px_0px_#63636A]
+     hover:bg-[#4C4C5C]
+    transition-colors duration-100
   "
 >
   Create account

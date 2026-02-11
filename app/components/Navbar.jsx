@@ -11,28 +11,28 @@ const Navbar = () => {
     <nav className="relative w-full bg-[#F6F5F3] overflow-visible">
       
       {/* Navbar */}
-      <div className="relative z-20 w-full max-w-[1360px] mx-auto lg:absolute lg:top-[32px] lg:left-1/2 lg:-translate-x-1/2 px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between border border-[#E2E1DD] bg-[#F6F5F3]">
+      <div className="relative z-20 w-full max-w-[1360px] mx-auto lg:absolute lg:top-[32px]   lg:left-1/2 lg:-translate-x-1/2 px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between border border-[#E2E1DD] bg-[#F6F5F3]">
         
         {/* Logo */}
         <Image
           src={Logo}
           alt="Logo"
-          className="w-[96px] sm:w-[110px] lg:w-[124px] h-auto object-contain"
+          className="w-[96px] sm:w-[110px] lg:w-[124px] h-auto object-contain hover:-rotate-6 hover:rounded-md transition-transform duration-300"
         />
 
         {/* Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-8 text-[15px] lg:text-[16px] font-medium text-[#474747]">
-          <li className="hover:text-[#70FACB] cursor-pointer">Platform</li>
-          <li className="hover:text-[#70FACB] cursor-pointer">Solutions</li>
-          <li className="hover:text-[#70FACB] cursor-pointer">Why Cyera</li>
-          <li className="hover:text-[#70FACB] cursor-pointer">Resources</li>
-          <li className="hover:text-[#70FACB] cursor-pointer">Company</li>
-          <li className="hover:text-[#70FACB] cursor-pointer">Pricing</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Platform</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Solutions</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Why Cyera</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Resources</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Company</li>
+          <li className="hover:text-[#7C7C7C] cursor-pointer">Pricing</li>
         </ul>
 
         {/* Buttons */}
         <div className="flex gap-2 sm:gap-4 items-center">
-          <button className="flex items-center gap-2 px-4 py-2 sm:py-3 rounded-[30px] border border-[#E2E1DD] bg-white text-sm">
+          <button className="flex items-center gap-2 px-4 py-2 sm:py-3 rounded-[30px] border border-[#E2E1DD] bg-white text-sm  hover:bg-[#7C7C7C] hover:text-white transition-colors duration-300">
             EN
             <svg
               className="w-3 h-3"
@@ -58,6 +58,8 @@ const Navbar = () => {
     font-normal
     overflow-hidden
     shadow-[inset_0px_1.4px_0.8px_0px_#63636A]
+    hover:bg-[#4C4C5C]
+    transition-colors duration-100
   "
 >
   Get a demo
