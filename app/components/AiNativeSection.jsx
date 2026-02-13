@@ -1,97 +1,135 @@
 
 
 
+
+
 // "use client";
 
 // import Image from "next/image";
+// import { motion } from "framer-motion";
 
 // const FastestGrowingData = () => {
+//   const fadeInRightToLeft = {
+//     hidden: { opacity: 0, x: 50 },
+//     visible: (i = 1) => ({
+//       opacity: 1,
+//       x: 0,
+//       transition: { delay: i * 0.2, duration: 0.6 },
+//     }),
+//   };
+
+//   const firstRowScrollImages = [
+//     "/images/Novel_AI.svg",
+//     "/images/Open_AI.svg",
+//     "/images/Google _AI.svg",
+//   ];
+
+//   const secondRowScrollImages = [
+//     "/images/Carmool.svg",
+//     "/images/docusighn.svg",
+//     "/images/peloton.svg",
+//     "/images/last_logo.svg",
+//   ];
+
 //   return (
 //     <section className="w-full relative py-16 md:py-20 bg-[#F6F5F3]">
-
 //       {/* Background Image */}
 //       <div
 //         className="absolute z-0"
-//         style={{
-//           top: "75px",
-//           left: "320px",
-//           transform: "translateX(-50%)",
+//          style={{
+//           top: "72px",
+//            left: "320px",
+//            transform: "translateX(-50%)",
 //           width: "450px",
 //           height: "190px",
-//           backgroundImage: `url("/images/CardUnion.svg")`,
-//           backgroundSize: "450px 300px",
-//           backgroundPosition: "center",
-//           backgroundRepeat: "no-repeat",
-//         }}
+//            backgroundImage: `url("/images/CardUnion.svg")`,
+//            backgroundSize: "450px 300px",
+//            backgroundPosition: "center",
+//            backgroundRepeat: "no-repeat",
+//          }}
 //       />
 
 //       <div className="relative z-10 max-w-[1100px] mx-auto px-6">
 
 //         {/* Row 1 */}
-//         <div className="grid grid-cols-1 md:grid-cols-5 gap-0.5">
+//         <div className="flex items-center">
 
-//           {/* Column 1 - Heading */}
-//           <div className="flex mr-4 mt-4 items-center h-[68px]">
+//           {/* Static First Column (Heading) */}
+//           <motion.div
+//             custom={1}
+//             variants={fadeInRightToLeft}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="flex items-center h-[68px] shrink-0"
+//           >
 //             <h2 className="font-['Inter_Tight'] text-[22px] font-normal text-[#1E1E1E] leading-[1.2] tracking-tight">
 //               Fastest-growing data <br />
 //               <span className="font-bold">security platform</span>
 //             </h2>
-//           </div>
+//           </motion.div>
 
-//           {/* Column 2 */}
-//           <div className="flex items-center justify-center mr-3 mt-3 h-[70px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative">
-//             <Image
-//               src="/images/FirstCard.svg"
-//               alt="DocuSign and AT&T"
-//               width={200}
-//               height={60}
-//               className="object-contain"
-//             />
-//           </div>
-
-//           {/* Column 3 */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative">
+//           {/* Static Second Column */}
+//           <div className="flex items-center justify-center h-[70px] mr-6 ml-8 bg-white border border-[#E8E8E6] rounded-md px-6 shadow-sm relative shrink-0 min-w-[160px]">
 //             <div className="relative w-24 h-6">
 //               <Image
-//                 src="/images/Novel_AI.svg"
-//                 alt="NovelAI"
+//                 src="/images/FirstCard.svg"
+//                 alt=""
 //                 fill
-//                 className="object-contain opacity-50"
+//                 className="object-contain opacity-100"
 //               />
 //             </div>
 //           </div>
 
-//           {/* Column 4 */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative">
-//             <div className="relative w-24 h-6">
-//               <Image
-//                 src="/images/Open_AI.svg"
-//                 alt="OpenAI"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
+//           {/* Infinite Scroll for remaining columns */}
+//           <div className="overflow-hidden flex-1">
+//             <div className="flex w-max animate-scroll gap-0">
+
+//               {firstRowScrollImages.map((img, i) => (
+//                 <div
+//                   key={i}
+//                   className="flex items-center justify-center h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-6 shadow-sm relative shrink-0 min-w-[160px]"
+//                 >
+//                   <div className="relative w-24 h-6">
+//                     <Image
+//                       src={img}
+//                       alt=""
+//                       fill
+//                       className="object-contain opacity-50"
+//                     />
+//                   </div>
+//                 </div>
+//               ))}
+
+//               {/* Duplicate for seamless scroll */}
+//               {firstRowScrollImages.map((img, i) => (
+//                 <div
+//                   key={"dup-" + i}
+//                   className="flex items-center justify-center h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-6 shadow-sm relative shrink-0 min-w-[160px]"
+//                 >
+//                   <div className="relative w-24 h-6">
+//                     <Image
+//                       src={img}
+//                       alt=""
+//                       fill
+//                       className="object-contain opacity-50"
+//                     />
+//                   </div>
+//                 </div>
+//               ))}
+
 //             </div>
 //           </div>
-
-//           {/* Column 5 */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative">
-//             <div className="relative w-28 h-6">
-//               <Image
-//                 src="/images/Google _AI.svg"
-//                 alt="Google AI"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
-//             </div>
-//           </div>
-
 //         </div>
 
 //         {/* Row 2 */}
-//         <div className="flex gap-0.5">
+//         <div className="flex items-center">
 
-//           {/* Column 1 - Anthem + LifeLabs (1.5x width) */}
-//           <div className="flex items-center justify-center mt-3 -ml-3 mr-3   h-[70px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative overflow-hidden" style={{ flex: 1.5 }}>
+//           {/* Static Card */}
+//           <div
+//             className="flex items-center justify-center -ml-2 mr-5 h-[70px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative overflow-hidden shrink-0"
+//             style={{ minWidth: "220px" }}
+//           >
 //             <div className="relative w-full h-full">
 //               <Image
 //                 src="/images/Group_8.svg"
@@ -102,56 +140,63 @@
 //             </div>
 //           </div>
 
-//           {/* Column 2 - Carmoola */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative" style={{ flex: 1 }}>
-//             <div className="relative w-full h-full">
-//               <Image
-//                 src="/images/Carmool.svg"
-//                 alt="Carmoola"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
+//           {/* Infinite Scroll */}
+//           <div className="overflow-hidden flex-1">
+//             <div className="flex w-max animate-scroll gap-0">
+
+//               {secondRowScrollImages.map((img, i) => (
+//                 <div
+//                   key={i}
+//                   className="flex items-center justify-center h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-6 shadow-sm relative shrink-0 min-w-[160px]"
+//                 >
+//                   <div className="relative w-24 h-6">
+//                     <Image
+//                       src={img}
+//                       alt=""
+//                       fill
+//                       className="object-contain opacity-50"
+//                     />
+//                   </div>
+//                 </div>
+//               ))}
+
+//               {secondRowScrollImages.map((img, i) => (
+//                 <div
+//                   key={"dup2-" + i}
+//                   className="flex items-center justify-center h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-6 shadow-sm relative shrink-0 min-w-[160px]"
+//                 >
+//                   <div className="relative w-24 h-6">
+//                     <Image
+//                       src={img}
+//                       alt=""
+//                       fill
+//                       className="object-contain opacity-50"
+//                     />
+//                   </div>
+//                 </div>
+//               ))}
+
 //             </div>
 //           </div>
-
-//           {/* Column 3 - DocuSign */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative" style={{ flex: 1 }}>
-//             <div className="relative w-full h-full">
-//               <Image
-//                 src="/images/docusighn.svg"
-//                 alt="DocuSign"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
-//             </div>
-//           </div>
-
-//           {/* Column 4 - Peloton */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative" style={{ flex: 1 }}>
-//             <div className="relative w-full h-full">
-//               <Image
-//                 src="/images/peloton.svg"
-//                 alt="Peloton"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
-//             </div>
-//           </div>
-
-//           {/* Column 5 - Stability AI */}
-//           <div className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative" style={{ flex: 1 }}>
-//             <div className="relative w-full h-full">
-//               <Image
-//                 src="/images/last_logo.svg"
-//                 alt="Stability AI"
-//                 fill
-//                 className="object-contain opacity-50"
-//               />
-//             </div>
-//           </div>
-
 //         </div>
+
 //       </div>
+
+//       {/* Scroll Animation */}
+//       <style jsx>{`
+//         .animate-scroll {
+//           animation: scroll 20s linear infinite;
+//         }
+
+//         @keyframes scroll {
+//           0% {
+//             transform: translateX(0);
+//           }
+//           100% {
+//             transform: translateX(-50%);
+//           }
+//         }
+//       `}</style>
 //     </section>
 //   );
 // };
@@ -169,7 +214,7 @@ import { motion } from "framer-motion";
 
 const FastestGrowingData = () => {
   const fadeInRightToLeft = {
-    hidden: { opacity: 0, x: 50 }, // শুরু ডানদিকে
+    hidden: { opacity: 0, x: 50 },
     visible: (i = 1) => ({
       opacity: 1,
       x: 0,
@@ -177,121 +222,99 @@ const FastestGrowingData = () => {
     }),
   };
 
+  const firstRowScrollImages = [
+    "/images/Novel_AI.svg",
+    "/images/Open_AI.svg",
+    "/images/Google _AI.svg",
+  ];
+
+  const secondRowScrollImages = [
+    "/images/Carmool.svg",
+    "/images/docusighn.svg",
+    "/images/peloton.svg",
+    "/images/last_logo.svg",
+  ];
+
   return (
     <section className="w-full relative py-16 md:py-20 bg-[#F6F5F3]">
-
       {/* Background Image */}
       <div
-        className="absolute z-0"
-          style={{
-           top: "75px",
-           left: "320px",
-           transform: "translateX(-50%)",      
-           width: "450px",         
-           height: "190px",           
-           backgroundImage: `url("/images/CardUnion.svg")`,           
-           backgroundSize: "450px 300px",           
-           backgroundPosition: "center",
-           backgroundRepeat: "no-repeat",
+        className="absolute z-0 hidden sm:block "
+        style={{
+          top: "72px",
+          left: "300px",
+          transform: "translateX(-50%)",
+          width: "450px",
+          height: "190px",
+          backgroundImage: `url("/images/CardUnion.svg")`,
+          backgroundSize: "450px 300px",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
 
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1100px] mx-auto ">
 
         {/* Row 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-0.5">
+        <div className="flex items-center">
 
-          {/* Column 1 - Heading (fade-in from right) */}
+          {/* Heading */}
           <motion.div
             custom={1}
             variants={fadeInRightToLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex mr-4 mt-4 items-center h-[68px]"
+            className="flex items-center h-auto shrink-0"
           >
-            <h2 className="font-['Inter_Tight'] text-[22px] font-normal text-[#1E1E1E] leading-[1.2] tracking-tight">
+            <h2 className="font-['Inter_Tight'] text-[18px] sm:text-[22px] md:text-[22px] font-normal text-[#1E1E1E] leading-[1.2] tracking-tight">
               Fastest-growing data <br />
               <span className="font-bold">security platform</span>
             </h2>
           </motion.div>
 
-          {/* Column 2 - Static */}
-          <div className="flex items-center justify-center mr-3 mt-3 h-[70px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative">
-            <Image
-              src="/images/FirstCard.svg"
-              alt="DocuSign and AT&T"
-              width={200}
-              height={60}
-              className="object-contain"
-            />
+          {/* Static Card */}
+          <div className="flex items-center  justify-center h-[50px] sm:h-[70px] md:h-[70px]   ml-8 mr-4 bg-white border border-[#E8E8E6] rounded-md px-3  shadow-sm relative shrink-0 min-w-[120px] sm:min-w-[160px] md:min-w-[160px]">
+            <div className="relative w-16 sm:w-24 h-5 sm:h-6">
+              <Image
+                src="/images/FirstCard.svg"
+                alt=""
+                fill
+                className="object-contain opacity-100"
+              />
+            </div>
           </div>
 
-          {/* Column 3 */}
-          <motion.div
-            custom={2}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-          >
-            <div className="relative w-24 h-6">
-              <Image
-                src="/images/Novel_AI.svg"
-                alt="NovelAI"
-                fill
-                className="object-contain opacity-50"
-              />
-            </div>
-          </motion.div>
+          {/* Infinite Scroll */}
+          <div className="overflow-hidden flex-1">
+            <div className="flex w-max animate-scroll ">
 
-          {/* Column 4 */}
-          <motion.div
-            custom={3}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-          >
-            <div className="relative w-24 h-6">
-              <Image
-                src="/images/Open_AI.svg"
-                alt="OpenAI"
-                fill
-                className="object-contain opacity-50"
-              />
-            </div>
-          </motion.div>
+              {[...firstRowScrollImages, ...firstRowScrollImages].map((img, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center h-[50px] sm:h-[70px] md:h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-3 sm:px-6 shadow-sm relative shrink-0 min-w-[120px] sm:min-w-[160px] md:min-w-[160px]"
+                >
+                  <div className="relative w-16 sm:w-24 h-5 sm:h-6">
+                    <Image
+                      src={img}
+                      alt=""
+                      fill
+                      className="object-contain opacity-50"
+                    />
+                  </div>
+                </div>
+              ))}
 
-          {/* Column 5 */}
-          <motion.div
-            custom={4}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-          >
-            <div className="relative w-28 h-6">
-              <Image
-                src="/images/Google _AI.svg"
-                alt="Google AI"
-                fill
-                className="object-contain opacity-50"
-              />
             </div>
-          </motion.div>
-
+          </div>
         </div>
 
         {/* Row 2 */}
-        <div className="flex gap-0.5 ">
+        <div className="flex items-center ">
 
-          {/* Column 1 - Anthem + LifeLabs (Static & bigger) */}
-          <div className="flex items-center justify-center mt-3 -ml-3 mr-3 h-[70px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative overflow-hidden" style={{ flex: 1.5 }}>
-            <div className="relative w-full h-full">
+          {/* Static Card */}
+          <div className="flex items-center justify-center h-[50px] sm:h-[70px] md:h-[70px] bg-white border border-[#E8E8E6] rounded-md px-3 sm:px-4 shadow-sm relative shrink-0 min-w-[140px] sm:min-w-[180px] md:min-w-[220px]">
+            <div className="relative w-16 sm:w-24 h-5 sm:h-6">
               <Image
                 src="/images/Group_8.svg"
                 alt="Anthem"
@@ -301,88 +324,47 @@ const FastestGrowingData = () => {
             </div>
           </div>
 
-          {/* Column 2 - Carmoola */}
-          <motion.div
-            custom={1}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-            style={{ flex: 1 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/Carmool.svg"
-                alt="Carmoola"
-                fill
-                className="object-contain opacity-50"
-              />
-            </div>
-          </motion.div>
+          {/* Infinite Scroll */}
+          <div className="overflow-hidden flex-1 ml-2">
+            <div className="flex w-max animate-scroll ">
 
-          {/* Column 3 - DocuSign */}
-          <motion.div
-            custom={2}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-            style={{ flex: 1 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/docusighn.svg"
-                alt="DocuSign"
-                fill
-                className="object-contain opacity-50"
-              />
-            </div>
-          </motion.div>
+              {[...secondRowScrollImages, ...secondRowScrollImages].map((img, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center h-[50px] sm:h-[70px] md:h-[88px] bg-[#F6F5F3] border border-[#E8E8E6] rounded-md px-3 sm:px-6 shadow-sm relative shrink-0 min-w-[120px] sm:min-w-[160px] md:min-w-[160px]"
+                >
+                  <div className="relative w-16 sm:w-24 h-5 sm:h-6">
+                    <Image
+                      src={img}
+                      alt=""
+                      fill
+                      className="object-contain opacity-50"
+                    />
+                  </div>
+                </div>
+              ))}
 
-          {/* Column 4 - Peloton */}
-          <motion.div
-            custom={3}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-            style={{ flex: 1 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/peloton.svg"
-                alt="Peloton"
-                fill
-                className="object-contain opacity-50"
-              />
             </div>
-          </motion.div>
-
-          {/* Column 5 - Stability AI */}
-          <motion.div
-            custom={4}
-            variants={fadeInRightToLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex items-center justify-center h-[88px] bg-white border border-[#E8E8E6] rounded-md px-4 shadow-sm relative"
-            style={{ flex: 1 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/last_logo.svg"
-                alt="Stability AI"
-                fill
-                className="object-contain opacity-50"
-              />
-            </div>
-          </motion.div>
-
+          </div>
         </div>
+
       </div>
+
+      {/* Scroll Animation */}
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+
     </section>
   );
 };

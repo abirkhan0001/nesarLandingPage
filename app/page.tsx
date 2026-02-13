@@ -8,6 +8,7 @@ import AiNativeSection from './components/AiNativeSection';
 import Elips from './components/Elips';
  import Data from './components/DataProcess';
  import AiNativ from './components/AiNativ';
+//  import DataDna from './components/DataDna';
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
       <AiNativ />
       <Elips />
       <Data />
+      {/* <DataDna /> */}
     </main>
   );
 }
